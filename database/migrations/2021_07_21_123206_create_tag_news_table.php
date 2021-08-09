@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Tag_news;
 
 class CreateTagNewsTable extends Migration
 {
@@ -15,7 +14,7 @@ class CreateTagNewsTable extends Migration
     public function up()
     {
         Schema::create('tag_news', function (Blueprint $table) {
-            $table->increments('tag_id');
+            $table->id();
             $table->string('news');
         });
     }

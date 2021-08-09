@@ -2,23 +2,19 @@
 
 namespace App\Models;
 
+use Database\Factories\TagNewsFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model
+class TagNews extends Model
 {
     use HasFactory;
 
+    protected $table = 'tag_news';
     public $timestamps = false;
 
-    public function tags()
+    protected static function newFactory()
     {
-        return $this->hasMany(Tag::class);
+        return new TagNewsFactory();
     }
-
-    public function category()
-    {
-        return $this->hasOne(Categories::class);
-    }
-
 }

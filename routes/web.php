@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,17 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/Category', function () {
-    return view('Category');
-})->name('Category');
-
-Route::get('/Home', function () {
-    return view('Home');
-})->name('Home');
-
-Route::get('/News', function () {
-    return view('News');
-})->name('News');
-
-Route::get('Home', 'App\Http\Controllers\CategoryController@allData')->name('categories-data');
+Route::get('/category', [CategoryController::class, 'index'])->name('category');
+Route::get('/news', 'App\Http\Controllers\CategoryController@news')->name('news');
+Route::get('/', 'App\Http\Controllers\CategoryController@home')->name('home');
 
