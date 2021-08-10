@@ -12,5 +12,5 @@
         </div>
     @endforeach
 
-   @include('news', $news)
+    @include('news', $news)
 @endsection

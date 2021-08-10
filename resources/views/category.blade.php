@@ -12,4 +12,5 @@
         </div>
     @endforeach
     <div style="width:110px">{{$categories->links()}}</div>
+
 @endsection

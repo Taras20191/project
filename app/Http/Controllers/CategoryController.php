@@ -10,8 +10,14 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
-
     private $categories;
+
+    public function top()
+    {
+        $info = DB::table('categories');
+
+        return view('news', ['categories' => $info]);
+    }
 
     public function __construct(Request $request)
     {
@@ -84,14 +90,5 @@ class CategoryController extends Controller
 
     }
 
-    public function data()
-    {
-        DB::table('categories')
-            ->select('id', 'name')
-            ->join('news', 'id', '=', 'news_description')
-            ->orderBy('name', 'asc')
-            ->get();
-        return view('category');
-    }
-
 }
+
