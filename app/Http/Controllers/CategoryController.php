@@ -33,10 +33,11 @@ class CategoryController extends Controller
 
     public function index(Request $request)
     {
+        $news = News::paginate(20);
 
         return view('category', [
             'categories' => $this->categories,
-
+            'news' => $news
         ]);
     }
 

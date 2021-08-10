@@ -11,6 +11,11 @@
             {{$element->name}}
         </div>
     @endforeach
-
-    @include('news', $news)
+    <h2>Список новостей</h2>
+    @foreach($news as $element)
+        <div>
+            {{$element->news_description}}
+        </div>
+    @endforeach
+    <div style="width:110px">{{$news->links()}}</div>
 @endsection

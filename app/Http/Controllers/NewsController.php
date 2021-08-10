@@ -10,9 +10,13 @@ class NewsController extends Controller
 {
     public function news()
     {
-        $news = News::paginate(20);
+        $news = News::take(20)->get();
         $categories = Categories::paginate(20);
         return view('news', ['news' => $news, 'categories' => $categories]);
     }
-
+    public function category(){
+        DB::table('users')
+            ->whereIn('id', [1, 2, 3])
+            ->get();
+    }
 }
