@@ -18,9 +18,9 @@ class NewsController extends Controller
 
     public function category()
     {
-        $categories = DB::table('categories')
+        $category = DB::table('categories')
             ->whereIn('id', [1, 2, 3])
             ->get();
-        return view('news', ['categories' => $categories]);
+        return view('news', ['categories' => $category]);
     }
 }

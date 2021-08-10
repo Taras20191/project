@@ -14,3 +14,4 @@
         {{$element->news_description}}
     </div>
 @endforeach
+
