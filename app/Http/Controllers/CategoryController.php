@@ -6,18 +6,11 @@ use App\Models\Categories;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
     private $categories;
 
-    public function top()
-    {
-        $info = DB::table('categories');
-
-        return view('news', ['categories' => $info]);
-    }
 
     public function __construct(Request $request)
     {
