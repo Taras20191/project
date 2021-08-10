@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title-block')
-    домашняя страница
+     категории
 @endsection
 @include('inc.header')
 @section('content')

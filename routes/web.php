@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
+Route::get('/categories/{category_id}', [NewsController::class, 'category'])->name('category_page');
 Route::get('/news', 'App\Http\Controllers\NewsController@news')->name('news');
 Route::get('/', 'App\Http\Controllers\CategoryController@home')->name('home');

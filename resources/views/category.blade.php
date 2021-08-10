@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('title-block')
-    Все категории
+     категории
 @endsection
 @include('inc.header')
 @section('content')
-    <h1>Список категорий</h1>
-    @foreach($categories as $category)
+    <h2>список категорий</h2>
+    @foreach($categories as $element)
         <div>
-            {{$category->name}}
+            {{$element->name}}
         </div>
     @endforeach
-    <h2>Список новостей</h2>
+    <h2>список новостей</h2>
     @foreach($news as $element)
         <div>
             {{$element->news_description}}

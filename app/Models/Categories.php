@@ -22,4 +22,5 @@ class Categories extends Model
             ->limit($limit)
             ->get();
     }
+
 }
