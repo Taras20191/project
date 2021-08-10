@@ -14,8 +14,8 @@ class CreateNewsToTags extends Migration
     public function up()
     {
         Schema::create('news_to_tags', function (Blueprint $table) {
-            $table->tinyInteger('tag_id');
-            $table->tinyInteger('news_id');
+            $table->bigInteger('tag_id');
+            $table->bigInteger('news_id');
             $table->index(['news_id', 'tag_id']);
         });
     }

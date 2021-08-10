@@ -14,8 +14,8 @@ class CreateNewsToCategory extends Migration
     public function up()
     {
         Schema::create('news_to_categories', function (Blueprint $table) {
-            $table->tinyInteger('news_id');
-            $table->tinyInteger('category_id');
+            $table->bigInteger('news_id');
+            $table->bigInteger('category_id');
             $table->index(['news_id', 'category_id']);
 
         });

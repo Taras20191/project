@@ -8,4 +8,4 @@
         {{$element->news_description}}
     </div>
 @endforeach
-{{ $news->links() }}
+<div style="width:110px">{{ $news->links() }}</div>
