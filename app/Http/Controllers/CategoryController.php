@@ -6,6 +6,7 @@ use App\Models\Categories;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -80,7 +81,17 @@ class CategoryController extends Controller
         $categories = Categories::orderBy($sort, $order)->paginate(10);
 
         return $categories;
+
     }
 
+    public function data()
+    {
+        DB::table('categories')
+            ->select('id', 'name')
+            ->join('news', 'id', '=', 'news_description')
+            ->orderBy('name', 'asc')
+            ->get();
+        return view('category');
+    }
 
 }
