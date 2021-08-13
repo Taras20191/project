@@ -24,4 +24,14 @@ class NewsController extends Controller
 
         return view('category_page', ['news' => $news, 'categories' => $categories]);
     }
+
+    public function tag($tag_id)
+    {
+        {
+            $news = News::whereIn('id', function ($query) use ($tag_id) {
+                $query->select('news_id')->from('news_to_tags')->where('tag_id', $tag_id);
+            })->paginate(25);
+            return view('tags_page', ['news' => $news, 'tags' => $tag_id]);
+        }
+    }
 }

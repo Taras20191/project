@@ -10,8 +10,9 @@
 
     @foreach($tag_id as $element)
         <div>{{$element->description}}</div>
+        <div>
+            <a href="{{ route('tags_page', ['tag_id' => $element->id]) }}">{{$element->description}}</a>
+        </div>
     @endforeach
-    <div>
-        <a href="{{ route('news_page', ['tag_id' => $element->id]) }}">{{$element->description}}</a>
-    </div>
+
 @endsection
