@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
 Route::get('/categories/{category_id}', [NewsController::class, 'category'])->name('category_page');
-Route::get('/categories/{tags_id}', [NewsController::class, 'news'])->name('tags_page');
-Route::get('/news/{news_id}', [TagController::class, 'news'])->name('news_page');
+Route::get('/categories/{tags_id}', [TagController::class, 'news'])->name('tags_page');
 Route::get('/news', 'App\Http\Controllers\NewsController@news')->name('news');
 Route::get('/', 'App\Http\Controllers\CategoryController@home')->name('home');

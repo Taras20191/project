@@ -12,6 +12,6 @@
         <div>{{$element->description}}</div>
     @endforeach
     <div>
-        <a href="{{ route('tags_page', ['tag_id' => $element->id]) }}">{{$element->description}}</a>
+        <a href="{{ route('news_page', ['tag_id' => $element->id]) }}">{{$element->description}}</a>
     </div>
 @endsection
