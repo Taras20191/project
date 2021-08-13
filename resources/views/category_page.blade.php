@@ -8,7 +8,7 @@
     <h2>список категорий</h2>
     @foreach($categories as $element)
         <div>
-            {{$element->name}}
+            <a href="{{ route('category_page', ['category_id' => $element->id]) }}">{{$element->name}}</a>
         </div>
     @endforeach
     <h2>список новостей</h2>
@@ -17,5 +17,4 @@
             {{$element->news_description}}
         </div>
     @endforeach
-    <div style="width:110px">{{$news->links()}}</div>
 @endsection

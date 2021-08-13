@@ -15,12 +15,13 @@ class NewsController extends Controller
         return view('news', ['news' => $news, 'categories' => $categories]);
     }
 
-    public function category($categories)
+    public function category($category_id)
     {
-       $news = News::whereIn('id', function ($query) use ($categories) {
-            $query->select('news_id')->from('news_to_categories')->where('category_id');
-        })->get();
-        $categories = Categories::paginate(20);
+        $news = News::whereIn('id', function ($query) use ($category_id) {
+            $query->select('news_id')->from('news_to_categories')->where('category_id', $category_id);
+        })->paginate(25);
+        $categories = Categories::paginate(25);
+
         return view('category_page', ['news' => $news, 'categories' => $categories]);
     }
 }
