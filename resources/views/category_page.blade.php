@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title-block')
-     категории
+    категории
 @endsection
 @include('inc.header')
 @section('content')

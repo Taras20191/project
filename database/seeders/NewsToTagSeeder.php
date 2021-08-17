@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\News;
-use App\Models\NewsToTag;
+use App\Models\NewsToTags;
 use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
@@ -30,6 +30,6 @@ class NewsToTagSeeder extends Seeder
             );
 
         }
-        NewsToTag::insert($data);
+        NewsToTags::insert($data);
     }
 }

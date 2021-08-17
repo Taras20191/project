@@ -13,6 +13,4 @@ class NewsToCategory extends Model
     {
         return $this->hasOne(News::class);
     }
-
-
 }

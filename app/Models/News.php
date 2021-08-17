@@ -20,5 +20,4 @@ class News extends Model
     {
         return $this->hasOne(Categories::class);
     }
-
 }

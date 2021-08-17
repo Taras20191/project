@@ -10,8 +10,8 @@ class NewsController extends Controller
 {
     public function news()
     {
-        $news = News::take(20)->get();
-        $categories = Categories::paginate(20);
+        $news = News::take(25)->get();
+        $categories = Categories::paginate(25);
         return view('news', ['news' => $news, 'categories' => $categories]);
     }
 
@@ -19,19 +19,17 @@ class NewsController extends Controller
     {
         $news = News::whereIn('id', function ($query) use ($category_id) {
             $query->select('news_id')->from('news_to_categories')->where('category_id', $category_id);
-        })->paginate(25);
+        })->paginate(15);
         $categories = Categories::paginate(25);
 
         return view('category_page', ['news' => $news, 'categories' => $categories]);
     }
 
-    public function tag($tag_id)
+    public function show($news_id)
     {
-        {
-            $news = News::whereIn('id', function ($query) use ($tag_id) {
-                $query->select('news_id')->from('news_to_tags')->where('tag_id', $tag_id);
-            })->paginate(25);
-            return view('tags_page', ['news' => $news, 'tags' => $tag_id]);
-        }
+        $categories = Categories::paginate(25);
+        $news_info = News::find('id', $news_id);
+
+        return view('news_page', ['categories' => $categories, 'news' => $news_info]);
     }
 }

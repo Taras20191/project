@@ -21,3 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('getCategory', [CategoryController::class, 'getCategory'])->name('api.getCategory');
 Route::post('getCategoryTotal', [CategoryController::class, 'getCategoryTotal'])->name('api.getCategoryTotal');
 
+//<a href="{{ route('tags_page', ['tag_id' => $element->id]) }}">{{$element->description}}</a>
+//<div>
+//<a href="{{ route('tags_page', ['tag_id' => $tag->id]) }}">{{$tag->description}}</a>
+//</div>

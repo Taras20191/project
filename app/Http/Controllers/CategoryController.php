@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
     public function home()
     {
-        $news = News::paginate(10);
+        $news = News::paginate(25);
 
         return view('home', ['categories' => $this->categories, 'news' => $news]);
     }
@@ -78,7 +78,7 @@ class CategoryController extends Controller
             $sort = $data['sort'];
         }
 
-        $categories = Categories::orderBy($sort, $order)->paginate(10);
+        $categories = Categories::orderBy($sort, $order)->paginate(20);
 
         return $categories;
 

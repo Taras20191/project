@@ -10,4 +10,9 @@ class Tag extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    public function news()
+    {
+        return $this->belongsTo(News::class);
+    }
 }
