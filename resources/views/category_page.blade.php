@@ -17,5 +17,5 @@
             {{$element->news_description}}
         </div>
     @endforeach
-    <div style="width:110px">{{$categories->links()}}</div>
+    <div style="width:40px">{{$categories->links()}}</div>
 @endsection

@@ -29,8 +29,9 @@ class NewsFactory extends Factory
         $category_key = array_rand($categories_ids);
 
         return [
-            'news_description' => Str::random(10),
-            'news_category_id' => $categories_ids[$category_key],
+            'tittle' => Str::random(15),
+            'news_description' => Str::random(5000),
+
         ];
     }
 

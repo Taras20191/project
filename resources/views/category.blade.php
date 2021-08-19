@@ -11,11 +11,5 @@
             <a href="{{ route('category_page', ['category_id' => $element->id]) }}">{{$element->name}}</a>
         </div>
     @endforeach
-    <h2>список новостей</h2>
-    @foreach($news as $element)
-        <div>
-            {{$element->news_description}}
-        </div>
-    @endforeach
-    <div style="width:110px">{{$categories->links()}}</div>
+    <div style="width:40px">{{$categories->links()}}</div>
 @endsection
