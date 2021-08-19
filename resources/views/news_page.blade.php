@@ -14,5 +14,5 @@
     <div>
         {{$news_info->tittle}}
     </div>
-    <textarea>{{$news_info->news_description}}</textarea>
+    <div style="word-break: break-all;">{{$news_info->news_description}}</div>
 @endsection
