@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
     public function home()
     {
-        $news = News::paginate(25);
+        $news = News::paginate(20);
 
         return view('home', ['categories' => $this->categories, 'news' => $news]);
     }

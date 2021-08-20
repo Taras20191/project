@@ -13,13 +13,8 @@
     @endforeach
     <h2>Список новостей по категории</h2>
     @foreach($news as $element)
-        <div style="word-break: break-all;">
-            {{$element->tittle}}
-        </div>
-    @endforeach
-    @foreach($news as $el)
         <div>
-            <a href="{{ route('news_page/{id}', ['news_id' => $element->id]) }}">{{$element->tittle}}</a>
+            <a href="{{ route('news_page',['news_id' => $element->id]) }}">{{$element->tittle}}</a>
         </div>
     @endforeach
     <div style="width:50px">{{$categories->links()}}</div>

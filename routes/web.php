@@ -21,4 +21,4 @@ Route::get('/categories/{category_id}', [NewsController::class, 'category'])->na
 Route::get('/news', 'App\Http\Controllers\NewsController@news')->name('news');
 Route::get('/', 'App\Http\Controllers\CategoryController@home')->name('home');
 //Route::get('/tags_page/{tag_id}', [TagController::class, 'tags'])->name('tags_page');
-Route::get('/news_page/{id}', [NewsController::class, 'show'])->name('news_page');
+Route::get('/news_page/news_id', [NewsController::class, 'show'])->name('news_page');
