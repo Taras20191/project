@@ -12,7 +12,7 @@ class News extends Model
 
     public function tags()
     {
-        return $this->hasMany(Tag::class);
+        return $this->belongsToMany(Tag::class, 'news_to_tags', 'news_id', 'tag_id');
     }
 
     public function category()
