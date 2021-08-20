@@ -5,9 +5,10 @@
 @endsection
 @include('inc.header')
 @section('content')
-    @foreach($news as $element)
+    @foreach($categories as $element)
         <div>
-            <a href="{{ route('news_page') }}">{{$element->news_description}}</a>
+            <a href="{{ route('category_page', ['category_id' => $element->id]) }}">{{$element->name}}</a>
         </div>
     @endforeach
+    <div style="word-break: break-all; font-size: 25px;">{{$news_info->news_description}}</div>
 @endsection
